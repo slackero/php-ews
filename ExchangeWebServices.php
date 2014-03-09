@@ -464,6 +464,21 @@ class ExchangeWebServices
     }
 
     /**
+     * Retrieve the room lists that are available within the Exchange organization.
+     *
+     * @since Exchange 2010
+     *
+     * @return GetRoomListsResponse
+     */
+    public function GetRoomLists()
+    {
+        $this->initializeSoapClient();
+        $response = $this->soap->{__FUNCTION__}();
+
+        return $this->processResponse($response);
+    }
+
+    /**
      * Retrieve the timezones supported by the server.
      *
      * @since Exchange 2010

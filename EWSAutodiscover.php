@@ -574,16 +574,16 @@ class EWSAutodiscover
             CURLOPT_HTTPAUTH        => CURLAUTH_NTLM,
             CURLOPT_CUSTOMREQUEST   => 'POST',
             CURLOPT_POSTFIELDS      => $this->getAutoDiscoverRequest(),
-            CURLOPT_RETURNTRANSFER  => true,
+            CURLOPT_RETURNTRANSFER  => 1,
             CURLOPT_USERPWD         => $this->username.':'.$this->password,
             CURLOPT_TIMEOUT         => $timeout,
             CURLOPT_CONNECTTIMEOUT  => $this->connection_timeout,
-            CURLOPT_FOLLOWLOCATION  => true,
-            CURLOPT_HEADER          => false,
+            CURLOPT_FOLLOWLOCATION  => 1,
+            CURLOPT_HEADER          => 0,
             CURLOPT_HEADERFUNCTION  => array($this, 'readHeaders'),
             CURLOPT_IPRESOLVE       => CURL_IPRESOLVE_V4,
-            CURLOPT_SSL_VERIFYPEER  => true,
-            CURLOPT_SSL_VERIFYHOST  => true,
+            CURLOPT_SSL_VERIFYPEER  => 1,
+            CURLOPT_SSL_VERIFYHOST  => 2, // can be false/0 OR true/1 OR 2, only 2 is secure!
         );
 
         // Set the appropriate content-type.

@@ -60,6 +60,27 @@ class ExchangeWebServices
     const VERSION_2010_SP2 = 'Exchange2010_SP2';
 
     /**
+     * Microsoft Exchange 2010 SP3
+     *
+     * @var string
+     */
+    const VERSION_2010_SP3 = 'Exchange2010_SP3';
+
+    /**
+     * Microsoft Exchange 2013
+     *
+     * @var string
+     */
+    const VERSION_2013 = 'Exchange2013';
+
+    /**
+     * Microsoft Exchange 2013 SP1, released 02/24/2014
+     *
+     * @var string
+     */
+    const VERSION_2013_SP1 = 'Exchange2013_SP1';
+
+    /**
      * Password to use when connecting to the Exchange server.
      *
      * @var string
@@ -103,6 +124,8 @@ class ExchangeWebServices
      * @see ExchangeWebServices::VERSION_2007_SP1
      * @see ExchangeWebServices::VERSION_2010
      * @see ExchangeWebServices::VERSION_2010_SP1
+     * @see ExchangeWebServices::VERSION_2013
+     * @see ExchangeWebServices::VERSION_2013_SP1
      */
     protected $version;
 

@@ -328,9 +328,17 @@ class EWSAutodiscover
                 case 2:
                     return ExchangeWebServices::VERSION_2010_SP2;
                     break;
+                case 3:
+                    return ExchangeWebServices::VERSION_2010_SP3;
+                    break;
                 default:
                     return ExchangeWebServices::VERSION_2010;
             }
+        } elseif ($majorversion == 15) {
+            if($minorversion === 0 && $buildversion >= 847) {
+            	return ExchangeWebServices::VERSION_2013_SP1; // released 02/24/2014
+            }
+            return ExchangeWebServices::VERSION_2013;
         }
 
         // Guess we didn't find a known version.

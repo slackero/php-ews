@@ -64,7 +64,7 @@ class ExchangeWebServices
      *
      * @var string
      */
-    const VERSION_2010_SP3 = 'Exchange2010_SP3';
+    const VERSION_2010_SP3 = 'Exchange2010_SP2';
 
     /**
      * Microsoft Exchange 2013

@@ -45,6 +45,13 @@ class NTLMSoapClient extends SoapClient
     protected $validate = false;
 
     /**
+     * Whether or not to check the existence of a common name in the SSL peer certificate
+     *
+     * @var int $verifyhost Boolean, accepts 2 (default), 1 (deprecated) or 0
+     */
+    protected $verifyhost = 2;
+
+    /**
      * Performs a SOAP request
      *
      * @link http://php.net/manual/en/function.soap-soapclient-dorequest.php
@@ -70,7 +77,7 @@ class NTLMSoapClient extends SoapClient
         $this->ch = curl_init($location);
 
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, $this->validate);
-        curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, $this->validate);
+        curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, $this->validate ? $this->verifyhost : 0);
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($this->ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($this->ch, CURLOPT_POST, true );
@@ -114,6 +121,24 @@ class NTLMSoapClient extends SoapClient
     public function validateCertificate($validate = true)
     {
         $this->validate = $validate;
+
+        return true;
+    }
+
+    /**
+     * Sets whether or not to check the existence of a common name in the SSL peer certificate
+     *
+     * @param int $verifyhost Boolean, accepts 2 (default), 1 (deprecated) or 0
+     */
+    public function setVerifyHost($verifyhost = 2)
+    {
+    	if(!$verifyhost) {
+        	$this->verifyhost = 0;
+        } elseif($verifyhost !== 2) {
+	        $this->verifyhost = 1; // deprecated
+        } else {
+	        $this->verifyhost = 2; // recommend
+        }
 
         return true;
     }

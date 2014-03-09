@@ -359,23 +359,25 @@ class EWSAutodiscover
         $version = null;
 
         // Pick out the host from the EXPR (Exchange RPC over HTTP).
-        foreach ($this->discovered['Account']['Protocol'] as $protocol) {
-            if (
-                ($protocol['Type'] == 'EXCH' || $protocol['Type'] == 'EXPR')
-                && isset($protocol['ServerVersion'])
-            ) {
-                if ($version == null) {
-                    $sv = $this->parseServerVersion($protocol['ServerVersion']);
-                    if ($sv !== false) {
-                        $version = $sv;
-                    }
-                }
-            }
+		if (isset($this->discovered['Account']['Protocol'])) {
+        	foreach ($this->discovered['Account']['Protocol'] as $protocol) {
+	            if (
+	                ($protocol['Type'] == 'EXCH' || $protocol['Type'] == 'EXPR')
+	                && isset($protocol['ServerVersion'])
+	            ) {
+	                if ($version == null) {
+	                    $sv = $this->parseServerVersion($protocol['ServerVersion']);
+	                    if ($sv !== false) {
+	                        $version = $sv;
+	                    }
+	                }
+	            }
 
-            if ($protocol['Type'] == 'EXPR' && isset($protocol['Server'])) {
-                $server = $protocol['Server'];
-            }
-        }
+	            if ($protocol['Type'] == 'EXPR' && isset($protocol['Server'])) {
+	                $server = $protocol['Server'];
+	            }
+	        }
+		}
 
         if ($server) {
             if ($version === null) {

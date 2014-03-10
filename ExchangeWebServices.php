@@ -502,6 +502,22 @@ class ExchangeWebServices
     }
 
     /**
+     * Retrieve the rooms within the specified room list
+     *
+     * @since Exchange 2010
+     *
+     * @param GetRoomsType $request
+     * @return GetRoomListsResponse
+     */
+    public function GetRooms($request)
+    {
+        $this->initializeSoapClient();
+        $response = $this->soap->{__FUNCTION__}($request);
+
+        return $this->processResponse($response);
+    }
+
+    /**
      * Retrieve the timezones supported by the server.
      *
      * @since Exchange 2010

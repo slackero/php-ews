@@ -507,7 +507,7 @@ class ExchangeWebServices
      * @since Exchange 2010
      *
      * @param GetRoomsType $request
-     * @return GetRoomListsResponse
+     * @return GetRoomsResponse
      */
     public function GetRooms($request)
     {

@@ -1,18 +1,21 @@
 <?php
 /**
- * Definition of the GetRoomsType type
- *
- * @package php-ews
- * @subpackage Types
+ * Contains EWSType_GetRoomsType.
  */
 
 /**
- * Definition of the GetRoomsType type
+ * Represents a request to get a list of rooms within a particular room list.
+ *
+ * @package php-ews\Types
+ *
+ * @todo Extend EWSType_BaseRequestType.
  */
 class EWSType_GetRoomsType extends EWSType
 {
     /**
-     * RoomList property
+     * Represents an e-mail address that identifies a list of meeting rooms.
+     *
+     * @since Exchange 2010 SP1
      *
      * @var EWSType_EmailAddressType
      */

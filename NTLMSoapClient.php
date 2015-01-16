@@ -75,6 +75,10 @@ class NTLMSoapClient extends SoapClient
         $this->__last_request_headers = $headers;
         $this->ch = curl_init($location);
 
+        //added lines to handle cookies to avoid 401 errors
+        //curl_setopt($this->ch, CURLOPT_COOKIEJAR, "tmp".DIRECTORY_SEPARATOR.$this->user.'.txt'); //store cookie
+        //curl_setopt($this->ch, CURLOPT_COOKIEFILE, "tmp".DIRECTORY_SEPARATOR.$this->user.'.txt'); //send cookie
+
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, $this->validate);
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, $this->validate ? $this->verifyhost : 0);
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
@@ -82,7 +86,17 @@ class NTLMSoapClient extends SoapClient
         curl_setopt($this->ch, CURLOPT_POST, true );
         curl_setopt($this->ch, CURLOPT_POSTFIELDS, $request);
         curl_setopt($this->ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-        curl_setopt($this->ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC | CURLAUTH_NTLM);
+
+        dump_var($request);
+
+        $curlVersion = curl_version();
+        $version = (double) $curlVersion['version'];
+        if ($version >= 7.3) {
+            curl_setopt($this->ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC | CURLAUTH_NTLM );
+        } else {
+            curl_setopt($this->ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); // | CURLAUTH_NTLM — Commented NTLM for compatibility issues with curl 7.22
+        }
+
         curl_setopt($this->ch, CURLOPT_USERPWD, $this->user.':'.$this->password);
 
         $response = curl_exec($this->ch);

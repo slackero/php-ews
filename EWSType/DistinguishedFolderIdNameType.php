@@ -218,6 +218,13 @@ class EWSType_DistinguishedFolderIdNameType extends EWSType
     const MESSAGE_ROOT = 'msgfolderroot';
 
     /**
+	 * Represents the public folder root.
+	 *
+	 * @var string
+	 */
+	const PUBLIC_ROOT = 'publicfoldersroot';
+
+    /**
      * Represents the My Contacts folder.
      *
      * @since Exchange 2013

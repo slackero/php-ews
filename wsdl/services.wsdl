@@ -1774,7 +1774,7 @@
 
     <wsdl:service name="ExchangeServices">
       <wsdl:port name="ExchangeServicePort" binding="tns:ExchangeServiceBinding">
-        <soap:address location="https://owa.bauhaus-dessau.de/ews/Exchange.asmx" />
+        <soap:address location="" />
       </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

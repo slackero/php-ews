@@ -51,6 +51,14 @@ class NTLMSoapClient extends SoapClient
     protected $verifyhost = 2;
 
     /**
+     * Whether or not to debug cUrl request and response
+     *
+     * @var int $debug Boolean, accepts 1 (request only), 2 (response only), 3 (request & response) or 0 (no debug)
+     */
+    protected $debug = 0;
+
+
+    /**
      * Performs a SOAP request
      *
      * @link http://php.net/manual/en/function.soap-soapclient-dorequest.php
@@ -75,23 +83,22 @@ class NTLMSoapClient extends SoapClient
         $this->__last_request_headers = $headers;
         $this->ch = curl_init($location);
 
-        //added lines to handle cookies to avoid 401 errors
-        //curl_setopt($this->ch, CURLOPT_COOKIEJAR, "tmp".DIRECTORY_SEPARATOR.$this->user.'.txt'); //store cookie
-        //curl_setopt($this->ch, CURLOPT_COOKIEFILE, "tmp".DIRECTORY_SEPARATOR.$this->user.'.txt'); //send cookie
+        // TODO: Add functionality to use COOKIE information
+        //$tmp_fname = tempnam("tmp", 'COOKIE_'.$this->user);
+        //curl_setopt($this->ch, CURLOPT_COOKIEJAR, $tmp_fname); //store cookie
+        //curl_setopt($this->ch, CURLOPT_COOKIEFILE, $tmp_fname); //send cookie
 
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, $this->validate);
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, $this->validate ? $this->verifyhost : 0);
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($this->ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($this->ch, CURLOPT_POST, true );
+        curl_setopt($this->ch, CURLOPT_POST, true);
         curl_setopt($this->ch, CURLOPT_POSTFIELDS, $request);
         curl_setopt($this->ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
 
-        dump_var($request);
-
-        $curlVersion = curl_version();
-        $version = (double) $curlVersion['version'];
-        if ($version >= 7.3) {
+        $curl_version = curl_version();
+        $curl_version = (double) $curl_version['version'];
+        if($curl_version >= 7.3) {
             curl_setopt($this->ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC | CURLAUTH_NTLM );
         } else {
             curl_setopt($this->ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); // | CURLAUTH_NTLM — Commented NTLM for compatibility issues with curl 7.22
@@ -100,6 +107,30 @@ class NTLMSoapClient extends SoapClient
         curl_setopt($this->ch, CURLOPT_USERPWD, $this->user.':'.$this->password);
 
         $response = curl_exec($this->ch);
+		
+		// TODO: Add better debug solution
+		// But to get what might goes wrong when communicating
+		// with the Exchange server this is enough for the moment
+        if($this->debug) {
+	        switch($this->debug) {
+		        case 1:
+					echo '<pre>';
+		        	print_r(htmlspecialchars($request));
+					echo '</pre>';
+					break;
+				case 2:
+					echo '<pre>';
+					print_r(htmlspecialchars($response));
+					echo '</pre>';
+					break;
+				case 3:
+					echo '<pre>';
+					print_r(htmlspecialchars($request));
+					print_r(htmlspecialchars($response));
+					echo '</pre>';
+					break;
+	        }
+        }
 
         // TODO: Add some real error handling.
         // If the response if false than there was an error and we should throw

@@ -16,7 +16,7 @@ class EWSType_NonEmptyArrayOfResponseObjectsType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_AcceptItemType
+     * @var \jamesiarmes\PEWS\Type\AcceptItemType
      */
     public $AcceptItem;
 
@@ -26,7 +26,7 @@ class EWSType_NonEmptyArrayOfResponseObjectsType extends EWSType
      *
      * @since Exchange 2010
      *
-     * @var EWSType_AcceptSharingInvitationType
+     * @var \jamesiarmes\PEWS\Type\AcceptSharingInvitationType
      */
     public $AcceptSharingInvitation;
 
@@ -44,7 +44,7 @@ class EWSType_NonEmptyArrayOfResponseObjectsType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_DeclineItemType
+     * @var \jamesiarmes\PEWS\Type\DeclineItemType
      */
     public $DeclineItem;
 
@@ -99,7 +99,7 @@ class EWSType_NonEmptyArrayOfResponseObjectsType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_SuppressReadReceiptType
+     * @var \jamesiarmes\PEWS\Type\SuppressReadReceiptType
      */
     public $SuppressReadReceipt;
 
@@ -108,7 +108,7 @@ class EWSType_NonEmptyArrayOfResponseObjectsType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_TentativelyAcceptItemType
+     * @var \jamesiarmes\PEWS\Type\TentativelyAcceptItemType
      */
     public $TentativelyAcceptItem;
 }

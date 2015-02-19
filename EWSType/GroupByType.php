@@ -18,7 +18,7 @@ class EWSType_GroupByType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_AggregateOnType
+     * @var \jamesiarmes\PEWS\Type\AggregateOnType
      */
     public $AggregateOn;
 

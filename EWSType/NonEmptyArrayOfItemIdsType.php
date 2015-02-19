@@ -16,7 +16,7 @@ class EWSType_NonEmptyArrayOfItemIdsType extends EWSType
      *
      * @since Exchange 2010 SP1
      *
-     * @var EWSType_ItemIdType
+     * @var \jamesiarmes\PEWS\Type\ItemIdType
      */
     public $ItemId;
 }

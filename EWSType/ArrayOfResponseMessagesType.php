@@ -25,7 +25,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2007 SP1
      *
-     * @var EWSType_ConvertIdResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ConvertIdResponseMessageType
      */
     public $ConvertIdResponseMessage;
 
@@ -88,7 +88,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2010
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $CreateUserConfigurationResponseMessage;
 
@@ -106,7 +106,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $DeleteFolderResponseMessage;
 
@@ -115,7 +115,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $DeleteItemResponseMessage;
 
@@ -124,7 +124,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2010
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $DeleteUserConfigurationResponseMessage;
 
@@ -133,7 +133,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2010
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $EmptyFolderResponseMessage;
 
@@ -323,7 +323,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2010
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $RefreshSharingFolderResponseMessage;
 
@@ -341,7 +341,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $SendItemResponseMessage;
 
@@ -386,7 +386,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $UnsubscribeResponseMessage;
 
@@ -413,7 +413,7 @@ class EWSType_ArrayOfResponseMessagesType extends EWSType
      *
      * @since Exchange 2010
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $UpdateUserConfigurationResponseMessage;
 

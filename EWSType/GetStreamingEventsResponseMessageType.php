@@ -3,15 +3,15 @@
  * Contains EWSType_GetStreamingEventsResponseMessageType.
  */
 
+use jamesiarmes\PEWS\Type\ResponseMessageType;
+
 /**
  * Represents the status and result of a single GetStreamingEvents operation
  * request.
  *
  * @package php-ews\Types
- *
- * @todo Extend EWSType_ResponseMessageType.
  */
-class EWSType_GetStreamingEventsResponseMessageType extends EWSType
+class EWSType_GetStreamingEventsResponseMessageType extends ResponseMessageType
 {
     /**
      * Provides a text description of the status of a streaming subscription.

@@ -1,14 +1,16 @@
 <?php
 /**
- * Contains ExchangeWebServices.
+ * Contains \jamesiarmes\PEWS\Client.
  */
+
+namespace jamesiarmes\PEWS;
 
 /**
  * Base class of the Exchange Web Services application.
  *
  * @package php-ews\Client
  */
-class ExchangeWebServices
+class Client
 {
     /**
      * Microsoft Exchange 2007
@@ -200,8 +202,9 @@ class ExchangeWebServices
     /**
      * Function Description
      *
-     * @param AddDelegateType $request
-     * @return AddDelegateResponseMessageType
+     * @param \jamesiarmes\PEWS\Type\AddDelegateType $request
+     *
+     * @return \jamesiarmes\PEWS\Type\AddDelegateResponseMessageType
      */
     public function AddDelegate($request)
     {

@@ -3,26 +3,15 @@
  * Contains EWSType_GetInboxRulesResponseType.
  */
 
+use jamesiarmes\PEWS\Type\ResponseMessageType;
+
 /**
  * Defines a response to a GetInboxRules operation request.
  *
  * @package php-ews\Types
- *
- * @todo Extend EWSType_ResponseMessageType.
  */
-class EWSType_GetInboxRulesResponseType extends EWSType
+class EWSType_GetInboxRulesResponseType extends ResponseMessageType
 {
-    /**
-     * Currently unused and reserved for future use.
-     *
-     * This element contains a value of 0.
-     *
-     * @since Exchange 2010
-     *
-     * @var integer
-     */
-    public $DescriptiveLinkKey;
-
     /**
      * Represents an array of the rules in the user's mailbox.
      *
@@ -31,45 +20,6 @@ class EWSType_GetInboxRulesResponseType extends EWSType
      * @var EWSType_ArrayOfRulesType
      */
     public $InboxRules;
-
-    /**
-     * Provides a text description of the status of the response.
-     *
-     * @since Exchange 2010
-     *
-     * @var string
-     */
-    public $MessageText;
-
-    /**
-     * Provides additional error response information.
-     *
-     * @since Exchange 2010
-     *
-     * @var string
-     *
-     * @todo Determine if we can use SimpleXML or DOMDocument here.
-     */
-    public $MessageXml;
-
-    /**
-     * Describes the status of the response.
-     *
-     * @since Exchange 2010
-     *
-     * @var \jamesiarmes\PEWS\Enumeration\ResponseClassType
-     */
-    public $ResponseClass;
-
-    /**
-     * Provides an error code that identifies the specific error that the
-     * request encountered.
-     *
-     * @since Exchange 2010
-     *
-     * @var \jamesiarmes\PEWS\Enumeration\ResponseCodeType
-     */
-    public $ResponseCode;
 
     /**
      * Indicates whether a Microsoft Outlook rule blob exists in the user's

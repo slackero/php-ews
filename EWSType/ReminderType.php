@@ -26,7 +26,7 @@ class EWSType_ReminderType extends EWSType
      *
      * @since Exchange 2013
      *
-     * @var EWSType_ItemIdType
+     * @var \jamesiarmes\PEWS\Type\ItemIdType
      */
     public $ItemId;
 
@@ -44,7 +44,7 @@ class EWSType_ReminderType extends EWSType
      *
      * @since Exchange 2013
      *
-     * @var EWSType_ItemIdType
+     * @var \jamesiarmes\PEWS\Type\ItemIdType
      */
     public $RecurringMasterItemId;
 

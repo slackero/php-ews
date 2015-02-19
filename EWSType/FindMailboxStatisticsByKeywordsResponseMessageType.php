@@ -3,15 +3,16 @@
  * Contains EWSType_FindMailboxStatisticsByKeywordsResponseMessageType.
  */
 
+use jamesiarmes\PEWS\Type\ResponseMessageType;
+
 /**
  * Represents the response message for a FindMailboxStatisticsByKeywords
  * request.
  *
  * @package php-ews\Types
- *
- * @todo Extend EWSType_ResponseMessageType.
  */
-class EWSType_FindMailboxStatisticsByKeywordsResponseMessageType extends EWSType
+class EWSType_FindMailboxStatisticsByKeywordsResponseMessageType extends
+    ResponseMessageType
 {
     /**
      * Currently unused and reserved for future use.

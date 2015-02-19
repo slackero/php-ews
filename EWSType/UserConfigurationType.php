@@ -36,7 +36,7 @@ class EWSType_UserConfigurationType extends EWSType
      *
      * @since Exchange 2010
      *
-     * @var EWSType_ItemIdType
+     * @var \jamesiarmes\PEWS\Type\ItemIdType
      */
     public $ItemId;
 

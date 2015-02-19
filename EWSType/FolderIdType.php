@@ -9,7 +9,7 @@
  *
  * @package php-ews\Types
  *
- * @todo Extend EWSType_ItemIdType.
+ * @todo Extend \jamesiarmes\PEWS\Type\ItemIdType.
  */
 class EWSType_FolderIdType extends EWSType
 {

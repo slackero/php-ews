@@ -3,24 +3,15 @@
  * Contains EWSType_RemoveDelegateType.
  */
 
+use jamesiarmes\PEWS\Type\BaseDelegateType;
+
 /**
  * Defines a request to remove delegates from a mailbox.
  *
  * @package php-ews\Types
- *
- * @todo Extend EWSType_BaseDelegateType.
  */
-class EWSType_RemoveDelegateType extends EWSType
+class EWSType_RemoveDelegateType extends BaseDelegateType
 {
-    /**
-     * Identifies the principal's mailbox.
-     *
-     * @since Exchange 2007
-     *
-     * @var EWSType_EmailAddressType
-     */
-    public $Mailbox;
-
     /**
      * Contains an array of delegate users to remove from a principal's mailbox.
      *

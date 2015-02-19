@@ -15,7 +15,7 @@ class EWSType_NonEmptyArrayOfAlternateIdsType extends EWSType
      *
      * @since Exchange 2007 SP1
      *
-     * @var EWSType_AlternateIdType
+     * @var \jamesiarmes\PEWS\Type\AlternateIdType
      */
     public $AlternateId;
 
@@ -24,7 +24,7 @@ class EWSType_NonEmptyArrayOfAlternateIdsType extends EWSType
      *
      * @since Exchange 2007 SP1
      *
-     * @var EWSType_AlternatePublicFolderIdType
+     * @var \jamesiarmes\PEWS\Type\AlternatePublicFolderIdType
      */
     public $AlternatePublicFolderId;
 
@@ -33,7 +33,7 @@ class EWSType_NonEmptyArrayOfAlternateIdsType extends EWSType
      *
      * @since Exchange 2007 SP1
      *
-     * @var EWSType_AlternatePublicFolderItemIdType
+     * @var \jamesiarmes\PEWS\Type\AlternatePublicFolderItemIdType
      */
     public $AlternatePublicFolderItemId;
 }

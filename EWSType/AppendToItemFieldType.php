@@ -72,7 +72,7 @@ class EWSType_AppendToItemFieldType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ItemType
+     * @var \jamesiarmes\PEWS\Type\ItemType
      */
     public $Item;
 
@@ -117,7 +117,7 @@ class EWSType_AppendToItemFieldType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_MessageType
+     * @var \jamesiarmes\PEWS\Type\MessageType
      */
     public $Message;
 

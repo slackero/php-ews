@@ -3,14 +3,14 @@
  * Contains EWSType_GetDelegateType.
  */
 
+use jamesiarmes\PEWS\Type\BaseDelegateType;
+
 /**
  * Defines a request to get information about delegates to a mailbox.
  *
  * @package php-ews\Types
- *
- * @todo Extend EWSType_BaseDelegateType.
  */
-class EWSType_GetDelegateType extends EWSType
+class EWSType_GetDelegateType extends BaseDelegateType
 {
     /**
      * Indicates whether the response contains permission settings for each
@@ -21,15 +21,6 @@ class EWSType_GetDelegateType extends EWSType
      * @var boolean
      */
     public $IncludePermissions;
-
-    /**
-     * Identifies the principal's mailbox.
-     *
-     * @since Exchange 2007 SP1
-     *
-     * @var EWSType_EmailAddressType
-     */
-    public $Mailbox;
 
     /**
      * Contains an array of delegate users to get from a principal's mailbox.

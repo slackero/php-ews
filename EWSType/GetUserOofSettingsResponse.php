@@ -34,7 +34,7 @@ class EWSType_GetUserOofSettingsResponse extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ResponseMessageType
+     * @var \jamesiarmes\PEWS\Type\ResponseMessageType
      */
     public $ResponseMessage;
 }

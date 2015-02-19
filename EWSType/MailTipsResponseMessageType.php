@@ -3,14 +3,14 @@
  * Contains EWSType_MailTipsResponseMessageType.
  */
 
+use jamesiarmes\PEWS\Type\ResponseMessageType;
+
 /**
  * Represents mail tips settings.
  *
  * @package php-ews\Types
- *
- * @todo Extend EWSType_ResponseMessageType.
  */
-class EWSType_MailTipsResponseMessageType extends EWSType
+class EWSType_MailTipsResponseMessageType extends ResponseMessageType
 {
     /**
      * Currently unused and reserved for future use.

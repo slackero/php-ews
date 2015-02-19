@@ -3,14 +3,14 @@
  * Contains EWSType_UpdateDelegateType.
  */
 
+use jamesiarmes\PEWS\Type\BaseDelegateType;
+
 /**
  * Defines a request to update delegates in a mailbox.
  *
  * @package php-ews\Types
- *
- * @todo Extend EWSType_BaseDelegateType.
  */
-class EWSType_UpdateDelegateType extends EWSType
+class EWSType_UpdateDelegateType extends BaseDelegateType
 {
     /**
      * Contains an array of DelegateUser elements that identify the delegates

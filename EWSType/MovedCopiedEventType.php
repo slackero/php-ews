@@ -26,7 +26,7 @@ class EWSType_MovedCopiedEventType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ItemIdType
+     * @var \jamesiarmes\PEWS\Type\ItemIdType
      */
     public $ItemId;
 
@@ -45,7 +45,7 @@ class EWSType_MovedCopiedEventType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ItemIdType
+     * @var \jamesiarmes\PEWS\Type\ItemIdType
      */
     public $OldItemId;
 

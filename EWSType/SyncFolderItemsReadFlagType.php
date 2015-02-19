@@ -24,7 +24,7 @@ class EWSType_SyncFolderItemsReadFlagType extends EWSType
      *
      * @since Exchange 2007
      *
-     * @var EWSType_ItemIdType
+     * @var \jamesiarmes\PEWS\Type\ItemIdType
      */
     public $ItemId;
 }

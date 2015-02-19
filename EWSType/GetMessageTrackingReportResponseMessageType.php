@@ -3,14 +3,15 @@
  * Contains EWSType_GetMessageTrackingReportResponseMessageType.
  */
 
+use jamesiarmes\PEWS\Type\ResponseMessageType;
+
 /**
  * Represents the response for the GetMessageTrackingReport operation.
  *
  * @package php-ews\Types
- *
- * @todo Extend EWSType_ResponseMessageType.
  */
-class EWSType_GetMessageTrackingReportResponseMessageType extends EWSType
+class EWSType_GetMessageTrackingReportResponseMessageType extends
+    ResponseMessageType
 {
     /**
      * Currently unused and reserved for future use.

@@ -116,13 +116,6 @@ class ExchangeWebServices
     protected $impersonation;
 
     /**
-     * Exchange Services.wsdl location
-     *
-     * @var string
-     */
-    protected $wsdl;
-
-    /**
      * Miscrosoft Exchange version that we are going to connect to
      *
      * @var string
@@ -148,15 +141,13 @@ class ExchangeWebServices
         $server = null,
         $username = null,
         $password = null,
-        $version = self::VERSION_2007,
-        $wsdl = null
+        $version = self::VERSION_2007
     ) {
         // Set the object properties.
         $this->setServer($server);
         $this->setUsername($username);
         $this->setPassword($password);
         $this->setVersion($version);
-        $this->setWsdl($wsdl);
     }
 
     /**
@@ -227,20 +218,6 @@ class ExchangeWebServices
         $this->version = $version;
 
         return true;
-    }
-
-    /**
-     * Sets the wsdl location.
-     *
-     * @param string $version
-     */
-    public function setWsdl($wsdl)
-    {
-	    if(is_string($wsdl) && is_file($wsdl)) {
-            $this->wsdl = $wsdl;
-	    } else {
-		    $this->wsdl = dirname(__FILE__).'/wsdl/services.wsdl';
-	    }
     }
 
     /**
@@ -1235,7 +1212,7 @@ class ExchangeWebServices
     protected function initializeSoapClient()
     {
         $this->soap = new NTLMSoapClient_Exchange(
-            $this->wsdl,
+            dirname(__FILE__).'/wsdl/services.wsdl',
             array(
                 'user' => $this->username,
                 'password' => $this->password,

@@ -107,7 +107,7 @@ class NTLMSoapClient extends SoapClient
         curl_setopt($this->ch, CURLOPT_USERPWD, $this->user.':'.$this->password);
 
         $response = curl_exec($this->ch);
-		
+
 		// TODO: Add better debug solution
 		// But to get what might goes wrong when communicating
 		// with the Exchange server this is enough for the moment

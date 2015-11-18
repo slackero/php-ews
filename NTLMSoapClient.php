@@ -106,31 +106,22 @@ class NTLMSoapClient extends SoapClient
 
         curl_setopt($this->ch, CURLOPT_USERPWD, $this->user.':'.$this->password);
 
-        $response = curl_exec($this->ch);
-
 		// TODO: Add better debug solution
 		// But to get what might goes wrong when communicating
 		// with the Exchange server this is enough for the moment
-        if($this->debug) {
-	        switch($this->debug) {
-		        case 1:
-					echo '<pre>';
-		        	print_r(htmlspecialchars($request));
-					echo '</pre>';
-					break;
-				case 2:
-					echo '<pre>';
-					print_r(htmlspecialchars($response));
-					echo '</pre>';
-					break;
-				case 3:
-					echo '<pre>';
-					print_r(htmlspecialchars($request));
-					print_r(htmlspecialchars($response));
-					echo '</pre>';
-					break;
-	        }
-        }
+        if($this->debug === 1 || $this->debug === 3) {
+			echo '<pre>';
+        	print_r(htmlspecialchars($request));
+			echo '</pre>';
+		}
+
+		$response = curl_exec($this->ch);
+
+		if($this->debug === 2 || $this->debug === 3) {
+			echo '<pre>';
+			print_r(htmlspecialchars($response));
+			echo '</pre>';
+		}
 
         // TODO: Add some real error handling.
         // If the response if false than there was an error and we should throw
@@ -185,5 +176,10 @@ class NTLMSoapClient extends SoapClient
         }
 
         return true;
+    }
+
+    public function setDebug($debug=0)
+    {
+	    $this->debug = intval($debug);
     }
 }

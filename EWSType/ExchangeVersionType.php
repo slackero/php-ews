@@ -49,14 +49,22 @@ class EWSType_ExchangeVersionType extends EWSType
     const EXCHANGE_2010_SP1 = 'Exchange2010_SP1';
 
     /**
-     * Target the schema files for Exchange 2010 Service Pack 2 (SP2) and
-     * Exchange 2010 Service Pack 3 (SP3).
+     * Target the schema files for Exchange 2010 Service Pack 2 (SP2)
      *
      * @since Exchange 2010 SP2
      *
      * @var string
      */
     const EXCHANGE_2010_SP2 = 'Exchange2010_SP2';
+
+    /**
+     * Target the schema files for Exchange 2010 Service Pack 3 (SP3).
+     *
+     * @since Exchange 2010 SP2
+     *
+     * @var string
+     */
+    const EXCHANGE_2010_SP3 = 'Exchange2010_SP2';
 
     /**
      * Target the schema files for Exchange 2013.
